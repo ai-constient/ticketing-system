@@ -28,7 +28,7 @@ fi
 
 ### Adjust Runtime Variables
 sed -i "s#<CRON_INTERVAL>#${CRON_INTERVAL}#g" /assets/cron/osticket.txt
-sed -i "s#<WEBROOT>#${NGINX_WEBROOT}#g" /assets/setup/install.php
+#sed -i "s#<WEBROOT>#${NGINX_WEBROOT}#g" /assets/setup/install.php
 
 ### Check to see if this is a new install, if yes copy information from assets create directories...
 if [ ! -f "${NGINX_WEBROOT}"/index.php ] ; then
@@ -38,8 +38,8 @@ if [ ! -f "${NGINX_WEBROOT}"/index.php ] ; then
    chown -R "${NGINX_USER}":"${NGINX_GROUP}" "${NGINX_WEBROOT}"/
    chmod -R a+rX "${NGINX_WEBROOT}"
    chmod -R u+rw "${NGINX_WEBROOT}"
-   chown -R root:root "${NGINX_WEBROOT}"/setup_hidden
-   chmod 700 "${NGINX_WEBROOT}"/setup_hidden
+   #chown -R root:root "${NGINX_WEBROOT}"/setup_hidden
+   #chmod 700 "${NGINX_WEBROOT}"/setup_hidden
 fi
 
 # Automate installation
@@ -73,7 +73,7 @@ chmod 644 "${NGINX_WEBROOT}"/include/ost-config.php
 chown -R "${NGINX_USER}":"${NGINX_GROUP}" "${NGINX_WEBROOT}"
 chmod -R a+rX "${NGINX_WEBROOT}"/
 chmod -R u+rw "${NGINX_WEBROOT}"/
-chown -R root:root "${NGINX_WEBROOT}"/setup_hidden
-chmod 700 "${NGINX_WEBROOT}"/setup_hidden
+#chown -R root:root "${NGINX_WEBROOT}"/setup_hidden
+#chmod 700 "${NGINX_WEBROOT}"/setup_hidden
 
 liftoff
